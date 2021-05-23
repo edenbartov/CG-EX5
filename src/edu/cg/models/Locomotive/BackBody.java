@@ -25,6 +25,27 @@ public class BackBody implements IRenderable {
         // TODO(8): render the back-body of the locomotive model. You need to combine the chassis, wheels and roof using
         //          affine transformations. In addition, you need to render the back-body windows and door. You can do
         //          that using simple QUADRATIC polygons (use GL_QUADS).
+
+        Materials.setMaterialChassis();
+        chassis.render();
+        // render roof
+        glPushMatrix();
+        glTranslated(0,Specification.BACK_BODY_HEIGHT/2,-Specification.BACK_BODY_DEPTH/2);
+        roof.render();
+        glPopMatrix();
+
+        glPushMatrix();
+        glTranslated(-Specification.BACK_BODY_WIDTH/2,-Specification.BACK_BODY_HEIGHT/2,-2* Specification.WHEEL_RADIUS);
+        wheel.render();
+        glPopMatrix();
+
+        glPushMatrix();
+        glTranslated(Specification.BACK_BODY_WIDTH/2,-Specification.BACK_BODY_HEIGHT/2,-2* Specification.WHEEL_RADIUS);
+        wheel.render();
+        glPopMatrix();
+
+
+        glPopMatrix();
         glPopMatrix();
     }
 

@@ -27,7 +27,7 @@ public class FrontBody implements IRenderable {
     @Override
     public void render() {
         glPushMatrix();
-        // TODO(6): Render each part along with affine transformations in order to bring every component to the
+        // Done(6): Render each part along with affine transformations in order to bring every component to the
         //          front-body coordinate system. You should make sure that the OpenGL ModelView matrix when applied on
         //          the relevant component it will transform it to the proper location in the front-body coordinate
         //          system.

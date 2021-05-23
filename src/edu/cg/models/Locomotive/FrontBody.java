@@ -31,34 +31,31 @@ public class FrontBody implements IRenderable {
         //          front-body coordinate system. You should make sure that the OpenGL ModelView matrix when applied on
         //          the relevant component it will transform it to the proper location in the front-body coordinate
         //          system.
-        double engineHeight = 0.2;
-        double engineDepth = 0.5;
-        double width = 0.4;
         Materials.setMaterialChassis();
         chassis.render();
         // render chimney
         glPushMatrix();
-        glTranslated(0,engineHeight,0);
+        glTranslated(0,Specification.FRONT_BODY_HEIGHT,0);
         chimney.render();
         glPopMatrix();
 
         glPushMatrix();
-        glTranslated(-.2,-.1,0.05);
+        glTranslated(-Specification.BACK_BODY_WIDTH/2,-Specification.FRONT_BODY_HEIGHT/2,Specification.WHEEL_RADIUS/2);
         wheel.render();
         glPopMatrix();
 
         glPushMatrix();
-        glTranslated(.2,-.1,0.05);
+        glTranslated(Specification.BACK_BODY_WIDTH/2,-Specification.FRONT_BODY_HEIGHT/2,Specification.WHEEL_RADIUS/2);
         wheel.render();
         glPopMatrix();
 
         glPushMatrix();
-        glTranslated(0,0,engineDepth/2);
+        glTranslated(0,0,Specification.FRONT_BODY_DEPTH/2);
         glPushMatrix();
-        glTranslated(-0.1,0,0);
+        glTranslated(-Specification.BACK_BODY_WIDTH/4,0,0);
         carLight.render();
         glPopMatrix();
-        glTranslated(0.1,0,0);
+        glTranslated(Specification.BACK_BODY_WIDTH/4,0,0);
         carLight.render();
         glPopMatrix();
 

@@ -3,6 +3,8 @@ package edu.cg.models.Locomotive;
 import edu.cg.models.Box;
 import edu.cg.models.IRenderable;
 
+import static org.lwjgl.opengl.GL11.glPushMatrix;
+import static org.lwjgl.opengl.GL11.glTranslated;
 import static org.lwjgl.opengl.GL21.*;
 
 /***
@@ -29,6 +31,38 @@ public class FrontBody implements IRenderable {
         //          front-body coordinate system. You should make sure that the OpenGL ModelView matrix when applied on
         //          the relevant component it will transform it to the proper location in the front-body coordinate
         //          system.
+        double engineHeight = 0.2;
+        double engineDepth = 0.5;
+        double width = 0.4;
+        Materials.setMaterialChassis();
+        chassis.render();
+        // render chimney
+        glPushMatrix();
+        glTranslated(0,engineHeight,0);
+        chimney.render();
+        glPopMatrix();
+
+        glPushMatrix();
+        glTranslated(-.2,-.1,0.05);
+        wheel.render();
+        glPopMatrix();
+
+        glPushMatrix();
+        glTranslated(.2,-.1,0.05);
+        wheel.render();
+        glPopMatrix();
+
+        glPushMatrix();
+        glTranslated(0,0,engineDepth/2);
+        glPushMatrix();
+        glTranslated(-0.1,0,0);
+        carLight.render();
+        glPopMatrix();
+        glTranslated(0.1,0,0);
+        carLight.render();
+        glPopMatrix();
+
+
         glPopMatrix();
     }
 

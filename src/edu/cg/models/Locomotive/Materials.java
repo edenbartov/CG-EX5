@@ -7,7 +7,7 @@ import static org.lwjgl.opengl.GL11.glMaterialfv;
 import static org.lwjgl.opengl.GL21.*;
 
 /**
- * TODO(0): Read instructions below.
+ * DONE(0): Read instructions below.
  * This class contains different material properties that can be used to color different surfaces of the locomotive
  * model. You need to use the static methods of the class inorder to define the color of each surface. Note, defining
  * the color using these static methods will be useful in the next assignment.
@@ -40,7 +40,8 @@ public final class Materials {
     }
 
     public static void setMaterialRoof() {
-        // TODO(7): Use this method to define the color of the locomotive roof.
+        // Done(7): Use this method to define the color of the locomotive roof.
+        glColor4fv(DARK_BLUE.toGLColor());
 
     }
 

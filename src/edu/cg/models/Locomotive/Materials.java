@@ -35,6 +35,9 @@ public final class Materials {
     private static final Vec GREY = new Vec(125f / 255f, 125f / 255f, 125f / 255f);
     private static final Vec LIGHT_GREY = new Vec(225f / 255f, 225f / 255f, 225f / 255f);
     private static final Vec DARK_BLUE = new Vec(0f, 0f, 25f / 255f);
+    private static final Vec DARKER_RED = new Vec(0.4f, 0.05f, 0f);
+
+
 
     private Materials() {
     }
@@ -42,15 +45,17 @@ public final class Materials {
     public static void setMaterialRoof() {
         // Done(7): Use this method to define the color of the locomotive roof.
         glColor4fv(BLACK.toGLColor());
-
     }
 
     public static void setMaterialChassis() {
         // DONE(4): Use this method to define the color of the locomotive chassis.
         glColor4fv(DARK_RED.toGLColor());
-
     }
 
+    public static void setMaterialChimney() {
+        // DONE(4): Use this method to define the color of the locomotive chassis.
+        glColor4fv(DARKER_RED.toGLColor());
+    }
     public static void setMaterialWheelTire() {
         // DONE(3): Use this method to define the color of the wheel tire
         glColor4fv(BLACK.toGLColor());

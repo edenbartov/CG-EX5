@@ -5,6 +5,7 @@ import edu.cg.models.Box;
 import edu.cg.models.Empty;
 import edu.cg.models.IRenderable;
 import edu.cg.models.Locomotive.*;
+import edu.cg.util.glu.GLU;
 
 import java.awt.*;
 
@@ -129,8 +130,22 @@ public class Viewer {
         double w, h;
         w = 3;
         h = 3 * ((double) height / width);
-        glOrtho(-w / 2, w / 2, -h / 2, h / 2, -2.0, 2.0);
+        //glOrtho(-w / 2, w / 2, -h / 2, h / 2, -2.0, 2.0);
+//        glFrustum(-0.1,
+//                0.1,
+//                -0.1 * (double)height / (double)width,
+//            0.1 * (double)height / (double)width,
+//            0.1,
+//            1000.0);
+        float fovy, aspect;
+        fovy = (float) 45.0;
+        aspect = ((float)width/height);
+        //gluPerspective(fovy, aspect, 1, 1000);
+        GLU glu = new GLU();
+        glu.gluPerspective(fovy, aspect, .1f,1000.0f);
+
     }
+
 
     /**
      * Rotate model in a way that corresponds with a virtual trackball.

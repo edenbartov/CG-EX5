@@ -41,7 +41,7 @@ public final class Materials {
 
     public static void setMaterialRoof() {
         // Done(7): Use this method to define the color of the locomotive roof.
-        glColor4fv(DARK_BLUE.toGLColor());
+        glColor4fv(BLACK.toGLColor());
 
     }
 
@@ -72,4 +72,9 @@ public final class Materials {
         float[] col = LIGHT_GREY.toGLColor();
         glColor4fv(col);
     }
+    public static void setMaterialWindow() {
+        // DONE(4): See how we used this function to define the color of the car light case.
+        glColor4fv(DARK_BLUE.toGLColor());
+    }
+
 }

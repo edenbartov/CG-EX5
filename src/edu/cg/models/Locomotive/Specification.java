@@ -40,4 +40,18 @@ public final class Specification {
     public static final double ROOF_HEIGHT = 0.6 * BASE_UNIT;
     public static final double ROOF_WIDTH = BACK_BODY_WIDTH;
 
+    // SmallWindow:
+    public static final double SMALL_WINDOW_DEPTH = EPS;
+    public static final double SMALL_WINDOW_HIGHT = 2 * BASE_UNIT;
+    public static final double SMALL_WINDOW_WIDTH = 1.5 * BASE_UNIT;
+
+    // BigWindow:
+    public static final double BIG_WINDOW_DEPTH = EPS;
+    public static final double BIG_WINDOW_HIGHT = 2 * BASE_UNIT;
+    public static final double BIG_WINDOW_WIDTH = 3 * BASE_UNIT;
+
+    // Door:
+    public static final double DOOR_DEPTH = EPS;
+    public static final double DOOR_HIGHT = 3.5 * BASE_UNIT;
+    public static final double DOOR_WINDOW_WIDTH = 1.5 * BASE_UNIT;
 }
